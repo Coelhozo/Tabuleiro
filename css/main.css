@@ -1,0 +1,323 @@
+@font-face{
+    font-family: Rampart One;
+    src: url('../fonts/RampartOne-Regular.ttf');
+}
+
+@font-face{
+    font-family: Lobster;
+    src: url('../fonts/Lobster-Regular.ttf');
+}
+
+@font-face{
+    font-family: Source Code;
+    src: url('../fonts/SourceCodePro-SemiBold.ttf');
+}
+
+:root{
+    --cor_destaque: crimson;
+}
+
+*::after,
+*::before,
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body, html{
+    height: 100%;
+}
+
+html{
+    overflow: hidden;
+}
+
+body{
+    overflow: auto;
+    /*
+    background-image: url('../img/bg.jpeg');
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    */
+    background-color: rgb(231, 231, 231);
+}
+
+header{
+    display: flex;
+}
+
+header h1{
+    flex-grow: 3;
+    text-align: center;
+    font-family: Rampart One, sans-serif;
+    font-size: 4rem;
+}
+
+header div{
+    flex-grow: 1;
+    text-align: right;
+}
+
+header > div{
+    margin: 1rem 2rem 0 0 ;
+}
+
+header div p{
+    font-family: Lobster, sans-serif;
+    text-transform: capitalize;
+    transform: translateX(-10%);
+    font-size: 2rem;
+    color: maroon;
+}
+
+header > div div{
+    font-family: Source Code, sans-serif;
+}
+
+header span{
+    display: block;
+    margin: .5rem 0;
+    transform: translateX(-5%);
+}
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+section{
+    display: flex;
+    margin-top: calc((-3*10% + 100%)/20);
+}
+
+section div {
+    /*box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.418) inset;*/
+    /*border: 5px solid black;*/
+    position: relative;
+    box-shadow: rgba(255, 255, 255, 0.993) -5px -5px 10px;
+    aspect-ratio: 1/1;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .6%;
+}
+
+section div::after{
+    content: "";
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: rgba(150, 150, 150, 0.993) 5px 5px 10px;
+}
+
+section div span{
+    width: 50%;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    display: block;
+}
+
+section :first-child,
+section :last-child{
+    position: relative;
+}
+
+section div :first-child::before{
+    content: "";
+    background-color: initial;
+}
+
+section :first-child::before{
+    content: "partida";
+    transform: rotate(90deg) translateY(-60%);
+    margin-right: 100%;
+}
+
+section :last-child::before{
+    content: "chegada";
+    transform: rotate(270deg) translateY(-60%);
+    margin-left: 100%;
+}
+
+section :first-child::before,
+section :last-child::before{
+    display: block;
+    width: 100%;
+    text-transform: capitalize;
+    letter-spacing: .2rem;
+    z-index: 2;
+    position: absolute;
+    background-color: var(--cor_destaque);
+    font-family: Source Code, sans-serif;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.perg {
+    left: 4rem;
+    transform: none;
+    margin: none;
+}
+
+div.logout > form > input{
+    --color-letter: rgb(95, 95, 95);
+    background-color: rgb(231, 231, 231);
+    border: none;
+    display: block;
+    box-shadow: var(--color-letter) 1px 1px 1px;
+    color: var(--color-letter);
+}
+
+div.logout > form > input:hover{
+    background-color: rgb(231, 231, 231);
+    color: rgb(94, 84, 158);
+}
+
+/*tela resposta-pergunta*/
+div.modal{
+    --color_bg: rgb(18, 16, 31);
+    position: absolute;
+    z-index: 3;
+    background-color: var(--color_bg);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: /*flex*/ none;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modal form{
+    background-color: var(--color_bg);
+    width: 30%;
+    aspect-ratio: 2/2;
+    box-shadow: rgb(0, 0, 0) 10px 10px 5px;
+    position: relative;
+    color: rgb(94, 84, 158);
+}
+
+div.modal form::before{
+    content: "";
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: block;
+    position: absolute;
+    box-shadow: rgb(46, 41, 78) -10px -10px 5px;
+    z-index: -1;
+}
+
+div.modal p{
+    padding: .2rem;
+    font-size: 2rem;
+    color: var(--cor_destaque);
+    text-align: center;
+    margin: .5rem 0;
+    font-family: Lobster;
+}
+
+div.modal input{
+    margin-left:2rem;
+    margin-top: 1rem;
+}
+
+div.modal span{
+    margin-left: 1rem;
+    font-family: Source Code;
+}
+
+div.modal > div{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    padding: 2rem;
+    text-transform: capitalize;
+    font-family: Lobster;
+    font-size: 2rem;
+    color: rgb(94, 84, 158);
+}
+
+div.content{
+    overflow: auto;
+    height: 80%;
+    position: relative;
+}
+
+input[type="submit"],
+button{
+    background: none;
+    border: none;
+    border: solid rgb(94, 84, 158) 5px;
+    outline: none;
+    color: rgb(94, 84, 158);
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: block;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0rem;
+    padding: .5rem;
+    font-weight: bolder;
+    position: relative;
+    left: 50%;
+    transform: translateX(-100%);
+    transition: all 500ms ease-in-out;
+}
+
+div.modal button{
+    display: absolute;
+    left: 0;
+}
+
+input[type="submit"]:hover,
+button:hover{
+    background-color: rgb(94, 84, 158);
+    color:rgb(23, 21, 39);
+}
+
+body > button:hover{
+    color: rgb(231, 231, 231);
+}
+
+/*counter*/
+div.counter{
+    --color_bg: rgba(0, 0, 0, 0.829);
+    position: absolute;
+    z-index: 3;
+    background-color: var(--color_bg);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.counter span{
+    font-family: Rampart One;
+    color: var(--cor_destaque);
+    font-size: 8rem;
+}
+
+.hide{
+    display: none;
+}
+
+/*customzação dos icones dos players*/
+#player-1 span{
+    background-color: chartreuse;
+}
+
+#player-2 span{
+    background-color:pink;
+}
+
+#player-3 span{
+    background-color:teal
+}

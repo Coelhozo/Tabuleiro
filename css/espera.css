@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logout{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+p{
+    font-family: Rampart One;
+    font-size: 3rem;
+}
+
+h1{
+    text-transform: capitalize;
+    font-family: Source Code;
+    color: crimson;
+}

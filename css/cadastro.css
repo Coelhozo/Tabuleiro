@@ -1,0 +1,13 @@
+form{
+    height: 50%;
+    position: relative;
+    aspect-ratio: 2/1;
+    box-shadow: rgb(156, 156, 156) 4px 4px 3px;
+}
+
+select{
+    margin-bottom: 1.5rem;
+    border: black solid 1px;
+    padding: .5rem;
+    width: 200%;
+}
